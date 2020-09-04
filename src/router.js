@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import * as Response from './controllers/responseController';
-// import * as Email from './controllers/email_controller';
+import * as Email from './controllers/emailController';
 
 const router = Router();
 
@@ -11,9 +11,6 @@ router.get('/', (req, res) => {
 // router.post('/email', Email.sendMatchEmail);
 // // router.post('/verification', Email.emailVerification);
 // router.get('/verify/:id', Email.afterVerification);
-
-// router.route('/verify').post(Email.sendVerificationEmail);
-// router.route('/verified').post(Email.getVerification);
 
 // post routes
 // router.route('/posts')
@@ -28,6 +25,14 @@ router.route('/responses')
 router.route('/responses/:id')
   .get(Response.getResponse)
   .delete(Response.deleteResponse);
+
+router.route('/email/:id')
+  .post(Email.sendReflectionEmail);
+
+router.route('/verify/:id')
+  .get(Email.verifyResponse);
+
+router.route('/verify').post(Email.sendVerificationEmail);
 
 // router.route('/posts/:id')
 //   .get(requireAuth, Posts.getPost)

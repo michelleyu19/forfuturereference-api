@@ -2,12 +2,14 @@
 import mongoose, { Schema } from 'mongoose';
 
 const responseSchema = new Schema({
+  senderName: { type: String },
+  recipientName: { type: String },
   senderEmail: {
     type: String,
     lowercase: true,
   },
   recipientEmails: { type: Array },
-  reflectionText: { type: String },
+  reflectionText: { type: Array },
   creationDate: { type: Date },
   sendDate: { type: Date },
   verified: { type: Boolean },
