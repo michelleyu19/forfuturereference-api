@@ -2,8 +2,10 @@
 import mongoose, { Schema } from 'mongoose';
 
 const responseSchema = new Schema({
-  senderName: { type: String },
-  recipientName: { type: String },
+  addresseeName: { type: String },
+  authorName: { type: String },
+  senderFirstName: { type: String },
+  senderLastName: { type: String },
   senderEmail: {
     type: String,
     lowercase: true,
@@ -12,6 +14,7 @@ const responseSchema = new Schema({
   reflectionText: { type: Array },
   creationDate: { type: Date },
   sendDate: { type: Date },
+  responseType: { type: String },
   verified: { type: Boolean },
 }, { runSettersOnQuery: true }, {
   toJSON: {

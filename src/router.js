@@ -8,10 +8,6 @@ router.get('/', (req, res) => {
   res.json({ message: 'welcome to our api!' });
 });
 
-// router.post('/email', Email.sendMatchEmail);
-// // router.post('/verification', Email.emailVerification);
-// router.get('/verify/:id', Email.afterVerification);
-
 // post routes
 // router.route('/posts')
 //   .post(requireAuth, Posts.createPost)
