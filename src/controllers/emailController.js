@@ -53,7 +53,7 @@ export const sendReflectionEmail = (req, res) => {
 export const sendVerificationEmail = (req, res) => {
   sendVerification({
     to: [req.senderEmail],
-    text: `Hi ${req.senderName}! We've saved your note for future reference! Click on or copy the link below into your browser to verify your email, and we'll schedule your note for future reference! \
+    text: `Hi ${req.senderFirstName}! We've saved your note for future reference! Click on or copy the link below into your browser to verify your email, and we'll schedule your note for future reference! \
     \n https://for-future-reference.herokuapp.com/api/verify/${req._id}`,
   });
   console.log('sent Verification');
